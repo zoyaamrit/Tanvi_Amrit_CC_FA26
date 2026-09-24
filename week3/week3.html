@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@2.3.2/lib/p5.js"></script>
+    <style>
+      body { margin: 0; overflow: hidden; }
+      canvas { display: block; }
+      #menu {
+        position: fixed;
+        top: 20px;
+        left: 10px;
+        z-index: 10;
+        display: flex;
+        gap: 8px;
+      }
+      #menu a {
+        padding: 8px 14px;
+        background: white;
+        color: black;
+        text-decoration: none;
+        font-family: sans-serif;
+      }
+      #menu a.active { background: #333; color: white; }
+    </style>
+  </head>
+
+  <body>
+      <a href="../index.html"> back to landing page </a>
+
+    <div id="menu">
+        <a href="?sketch=sketch2.js">puppet</a>
+        <a href="?sketch=sketch1.js">abstract geometry </a>
+        <a href="?sketch=sketch3.js">changing colours grid</a>
+
+    </div>
+
+    <script>
+      const allowed = ["sketch1.js", "sketch2.js", "sketch3.js"];
+      let chosen = new URLSearchParams(location.search).get("sketch");
+      if (!allowed.includes(chosen)) chosen = "sketch2.js"; 
+
+      document.querySelectorAll("#menu a").forEach(a => {
+        if (a.getAttribute("href") === "?sketch=" + chosen) a.classList.add("active");
+      });
+
+      // load only the chosen sketch
+      const s = document.createElement("script");
+      s.src = chosen;
+      document.body.appendChild(s);
+    </script>
+  </body>
+</html>
