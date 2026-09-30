@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@2.3.2/lib/p5.js"></script>
+    <style>
+      body { margin: 0; overflow: hidden; }
+      canvas { display: block; }
+      #menu {
+        position: fixed;
+        top: 20px;
+        left: 10px;
+        z-index: 10;
+        display: flex;
+        gap: 8px;
+      }
+      #menu a {
+        padding: 8px 14px;
+        background: white;
+        color: black;
+        text-decoration: none;
+        font-family: sans-serif;
+      }
+      #menu a.active { background: #333; color: white; }
+    </style>
+  <script src="https://cdn.jsdelivr.net/npm/p5@2.3.0/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5.plotsvg@latest/dist/p5.plotSvg.js"></script>
+  </head>
+
+  <body>
+
+    <!-- <script src="sketch.js"></script> -->
+
+    <div id="menu">
+        <a href="../index.html"> back </a>
+
+        <a href="?sketch=sketch.js">in class</a>
+        <a href="?sketch=mandala.js"> mandala</a>
+        <a href="?sketch"></a>
+
+    </div>
+
+    <script>
+      const allowed = ["sketch.js", "mandala.js"];
+      let chosen = new URLSearchParams(location.search).get("sketch");
+      if (!allowed.includes(chosen)) chosen = "sketch2.js"; 
+
+      document.querySelectorAll("#menu a").forEach(a => {
+        if (a.getAttribute("href") === "?sketch=" + chosen) a.classList.add("active");
+      });
+
+      // load only the chosen sketch
+      const s = document.createElement("script");
+      s.src = chosen;
+      document.body.appendChild(s);
+    </script>
+  </body>
+</html>
