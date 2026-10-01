@@ -26,31 +26,19 @@
   </head>
 
   <body>
+      <div id="menu">
+       <a href="../index.html"> << </a>
+       <a href="imgs.html"> pen plotter </a>
+      <script src="mandala.js"></script>
 
-    <!-- <script src="sketch.js"></script> -->
 
-    <div id="menu">
-        <a href="../index.html"> back </a>
-
-        <a href="?sketch=sketch.js">in class</a>
-        <a href="?sketch=mandala.js"> mandala</a>
-        <a href="?sketch"></a>
 
     </div>
 
-    <script>
-      const allowed = ["sketch.js", "mandala.js"];
-      let chosen = new URLSearchParams(location.search).get("sketch");
-      if (!allowed.includes(chosen)) chosen = "sketch2.js"; 
+        
 
-      document.querySelectorAll("#menu a").forEach(a => {
-        if (a.getAttribute("href") === "?sketch=" + chosen) a.classList.add("active");
-      });
 
-      // load only the chosen sketch
-      const s = document.createElement("script");
-      s.src = chosen;
-      document.body.appendChild(s);
-    </script>
+
   </body>
 </html>
+
