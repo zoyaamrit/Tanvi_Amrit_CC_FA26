@@ -81,8 +81,7 @@ function dots(r, size, freq) {
 
 
 function wave_circ(r, amp, freq) {
-    circumference = TWO_PI * r 
-    waves = circumference / freq 
+    waves = floor(TWO_PI * r / freq )
 
     // adapted from https://editor.p5js.org/wujiaq/sketches/dOXHWDNvh
     beginShape();
@@ -97,7 +96,7 @@ function wave_circ(r, amp, freq) {
 function tri_circ(r, h, w, freq, fill) {
 
 
-    count = TWO_PI * r  / freq 
+    count = floor(TWO_PI * r  / freq )
 
     for (let i = 0; i < count; i++) {
         push()
