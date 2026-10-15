@@ -84,7 +84,7 @@ function draw() {
 
 
         if (dist(xLoc, height/2, width/2, height/2) < 95) {
-    window.location.href = '../index.html'  }
+    window.location.href = '../week6hw/index.html'  }
 
     rect(width/2, height/2, 100, 280)
  
