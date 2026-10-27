@@ -1,0 +1,42 @@
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5.sound@0.4.1/dist/p5.sound.min.js"></script>
+    
+</head>
+
+<body>
+    <script>
+        function setup() {
+  createCanvas(500, 500);
+  pixelDensity(1); 
+}
+
+function draw() {
+  loadPixels(); 
+  let index = 0
+
+
+  for (let x = 0; x < width; x++) {
+    for (let y = 0; y < height; y++) {
+        
+        // r, g, b, alpha 
+
+        let mappedX = map(x, 0, width, 0, PI*8)
+        let mappedY = map(y, 0, height, 0, PI*8)
+
+      
+        pixels[index]     = abs(sin(mappedX) * 255);
+        pixels[index + 1] = 100
+        pixels[index + 2] = abs(sin(mappedY) * 255);    
+        pixels[index + 3] = 255;    
+
+      index += 4
+    }
+  }
+
+  updatePixels();
+  noLoop();
+}
+
+    </script>
+</body>
