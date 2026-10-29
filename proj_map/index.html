@@ -4,9 +4,26 @@
 
 </head>
 <body>
-    <a href="index.html"></a>
+            <a href="../index.html">BACK </a>
 
-    <script src="sketch.js"></script>
+    <div style="width: 50%; height: 50%; position: absolute; top: 20%; left: 20%;">
+
+
+     <p>My part of this project was building my own world, the rolling landscape, and writing the logic that lets the worm travel between all of our worlds. 
+
+      </p> 
+      <p>I went back to the sine and noise function we had explored in class and and made hills using the same concept. I wanted to make them feel more alive, so one each pass of draw the hill moves per the offset and height. Balancing the math between the two was what took the longest, the plain sine function was very mechanical, so adding the noise at different scales was important. 
+</p>
+
+<p>The bigger challenge was with the connecting the character. I initially tried a boolean approach where the character switched on and off depending on what scene it was in. However, I realized that I could take advantage of the graphics layer setup and simply change where the characters were being rendered. So, if the character’s positioning exceeds the width of the current buffer, it moves to the next. 
+</p>
+
+<p>Getting the gif to animate was surprisingly challenging, it ended up being an issue in the file that I had to look up how to correct. 
+</p>
+<br>
+     <a href="https://zl7027.github.io/projection-team-project/">End Result is Linked here!</a>
+
+</div>
 
     <style>
   html, body {
