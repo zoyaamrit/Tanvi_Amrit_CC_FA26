@@ -1,42 +1,24 @@
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/p5.sound@0.4.1/dist/p5.sound.min.js"></script>
-    
+<!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@2.3.2/lib/p5.js"></script>
+
 </head>
-
 <body>
-    <script>
-        function setup() {
-  createCanvas(500, 500);
-  pixelDensity(1); 
-}
+    <a href="index.html"></a>
 
-function draw() {
-  loadPixels(); 
-  let index = 0
+    <!-- <script src="sketch4.js"></script> -->
 
+     <script src="sketch3.js"></script>
 
-  for (let x = 0; x < width; x++) {
-    for (let y = 0; y < height; y++) {
-        
-        // r, g, b, alpha 
-
-        let mappedX = map(x, 0, width, 0, PI*8)
-        let mappedY = map(y, 0, height, 0, PI*8)
-
-      
-        pixels[index]     = abs(sin(mappedX) * 255);
-        pixels[index + 1] = 100
-        pixels[index + 2] = abs(sin(mappedY) * 255);    
-        pixels[index + 3] = 255;    
-
-      index += 4
-    }
+    <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;            
+    overscroll-behavior: none;   
   }
-
-  updatePixels();
-  noLoop();
-}
-
-    </script>
+  canvas {
+    display: block;              
+  }
+    </style>
 </body>
