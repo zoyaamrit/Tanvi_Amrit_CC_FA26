@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shadow Animals</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/p5.min.js"></script>
+  <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+</head>
+<body>
+  <main id="stage"></main>
+
+  <p id="status">loading hand model ...</p>
+
+  <ul id="legend">
+    <li data-g="deer"><b>deer</b> middle + ring touch thumb, pointer + little finger up</li>
+    <li data-g="snake"><b>snake</b> thumb on palm, four fingers slightly bent</li>
+    <li data-g="lotus"><b>lotus</b> all fingers splayed in an arc</li>
+    <li data-g="bird"><b>bird</b> two open hands, thumbs interlocked</li>
+    <li data-g="dog"><b>dog</b> pointer + middle joined, ring + little joined, thumb up</li>
+    <li data-g="rabbit"><b>rabbit</b> pointer + middle up, ring + little folded</li>
+    <li data-g="swan"><b>swan</b> all fingertips pinched to the thumb</li>
+    <li data-g="crocodile"><b>crocodile</b> flat joined fingers, thumb apart below (close to snap)</li>
+    <li data-g="bull"><b>bull</b> thumb + little finger out, the rest folded</li>
+    <li data-g="turtle"><b>turtle</b> fist with the thumb sticking out</li>
+  </ul>
+
+  <p id="keys">[v] camera &nbsp; [h] hand lines &nbsp; [d] debug</p>
+
+  <script src="sketch2.js"></script>
+</body>
+</html>
